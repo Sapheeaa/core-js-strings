@@ -289,9 +289,11 @@ function reverseString(str) {
  *   orderAlphabetically('webmaster') => 'abeemrstw'
  *   orderAlphabetically('textbook') => 'bekoottx'
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
+ * str.split('').sort().join('');
  */
-function orderAlphabetically(/* str */) {
-  throw new Error('Not implemented');
+function orderAlphabetically(str) {
+  const sorted = str.split('').sort().join('');
+  return sorted;
 }
 
 /**
@@ -306,8 +308,8 @@ function orderAlphabetically(/* str */) {
  *   containsSubstring('JavaScript is Fun', 'Python') => false
  *   containsSubstring('12345', '34') => true
  */
-function containsSubstring(/* str, substring */) {
-  throw new Error('Not implemented');
+function containsSubstring(str, substring) {
+  return str.includes(substring);
 }
 
 /**
@@ -323,9 +325,13 @@ function containsSubstring(/* str, substring */) {
  *   countVowels('cherry') => 2
  *   countVowels('aEiOu') => 5
  *   countVowels('XYZ') => 1
+ * /g meens global, not just first vowels
+ * str.match return null if there are no vowels
  */
-function countVowels(/* str */) {
-  throw new Error('Not implemented');
+function countVowels(str) {
+  const vowStr = str.match(/[aeiouyAEIOUY]/g) || '';
+  const { length: num } = vowStr;
+  return num;
 }
 
 /**
